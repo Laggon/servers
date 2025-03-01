@@ -10,7 +10,16 @@ class Site extends Model
         'name',
         'url',
         'owner_id',
+        'server_username',
+        'server_directory',
+        'server_id',
     ];
+
+
+    public function server()
+    {
+        return $this->belongsTo(Server::class);
+    }
 
     public function owner()
     {
