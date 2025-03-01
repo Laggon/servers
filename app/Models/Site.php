@@ -9,12 +9,12 @@ class Site extends Model
     protected $fillable = [
         'name',
         'url',
+        'status',
         'owner_id',
         'server_username',
         'server_directory',
         'server_id',
     ];
-
 
     public function server()
     {
