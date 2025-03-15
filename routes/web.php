@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DatabaseController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ServerController;
@@ -20,3 +21,5 @@ Route::put('/servers/{server}', [ServerController::class, 'update'])
     ->name('servers.update');
 Route::delete('/servers/{server}', [ServerController::class, 'destroy'])
     ->name('servers.destroy');
+
+Route::resource('databases', DatabaseController::class);
