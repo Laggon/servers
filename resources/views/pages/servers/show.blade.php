@@ -4,11 +4,13 @@
     <a href="{{ route('servers.index') }}">Список серверов</a>
     <h1>Сервер {{ $server->name }}</h1>
     <div>
-        <a href="{{ route('servers.edit', $server) }}">Изменить</a>
-        <form action="{{ route('servers.destroy', $server) }}" method="POST">
+        <div>
+            <a href="{{ route('servers.edit', $server) }}" class="btn btn-secondary">Изменить</a>
+        </div>
+        <form action="{{ route('servers.destroy', $server) }}" class="mt-2" method="POST">
             @method('delete')
             @csrf
-            <input type="submit" value="Удалить">
+            <input type="submit" class="btn btn-danger" value="Удалить">
         </form>
     </div>
     <div>

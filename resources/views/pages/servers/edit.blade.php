@@ -16,24 +16,18 @@
             </div>
         @endif
 
-        <div>
-            <div>
-                <label for="name">Название</label>
-            </div>
-            <div>
-                <input id="name" name="name" value="{{ old('name') ?: $server->name }}" required>
-            </div>
+        <div class="form-group">
+            <label for="name">Название</label>
+            <input class="form-control" id="name" name="name" value="{{ old('name') ?: $server->name }}" required>
         </div>
 
-        <div>
-            <div>
-                <label for="ip">IP</label>
-            </div>
-            <div>
-                <input id="ip" name="ip" value="{{ $server->ip }}" disabled>
-            </div>
+        <div class="form-group">
+            <label for="ip">IP</label>
+            <input class="form-control" id="ip" name="ip" value="{{ old('ip') }}" disabled>
         </div>
 
-        <input type="submit" value="Сохранить">
+        <div class="mt-2">
+            <input type="submit" class="btn btn-success" value="Сохранить">
+        </div>
     </form>
 @endsection
