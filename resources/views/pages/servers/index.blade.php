@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">Список серверов</li>
+        </ol>
+    </nav>
+
     <a href="{{ route('servers.create') }}" class="btn btn-success">Добавить</a>
     <table class="table">
         <thead>

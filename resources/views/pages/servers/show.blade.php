@@ -1,7 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-    <a href="{{ route('servers.index') }}">Список серверов</a>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ route('servers.index') }}">Список серверов</a></li>
+        </ol>
+    </nav>
+
     <h1>Сервер {{ $server->name }}</h1>
     <div>
         <div>

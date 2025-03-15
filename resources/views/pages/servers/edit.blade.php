@@ -1,6 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ route('servers.index') }}">Список серверов</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('servers.show', $server) }}">{{ $server->name }}</a></li>
+        </ol>
+    </nav>
+
     <form action="{{ route('servers.update', $server) }}" method="POST">
         @method('put')
         @csrf
