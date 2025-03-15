@@ -6,25 +6,20 @@
         @csrf
         <h1>Редактирование сервера {{ $server->name }}</h1>
 
-        @if ($errors->any())
-            <div>
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
+        @include('components.form.errors')
 
-        <div class="form-group">
-            <label for="name">Название</label>
-            <input class="form-control" id="name" name="name" value="{{ old('name') ?: $server->name }}" required>
-        </div>
+        @include('components.form.fields.input', [
+            'name' => 'name',
+            'label' => 'Название',
+            'value' => $server->name,
+        ])
 
-        <div class="form-group">
-            <label for="ip">IP</label>
-            <input class="form-control" id="ip" name="ip" value="{{ old('ip') }}" disabled>
-        </div>
+        @include('components.form.fields.input', [
+            'name' => 'ip',
+            'label' => 'IP',
+            'value' => $server->ip,
+            'disabled' => true,
+        ])
 
         <div class="mt-2">
             <input type="submit" class="btn btn-success" value="Сохранить">
