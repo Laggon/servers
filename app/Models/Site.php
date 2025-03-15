@@ -14,11 +14,19 @@ class Site extends Model
         'server_username',
         'server_directory',
         'server_id',
+        'database_username',
+        'database_name',
+        'database_id',
     ];
 
     public function server()
     {
         return $this->belongsTo(Server::class);
+    }
+
+    public function database()
+    {
+        return $this->belongsTo(Database::class);
     }
 
     public function owner()
